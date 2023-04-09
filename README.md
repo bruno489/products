@@ -23,3 +23,9 @@ As Tecnologias/Frameworks/Bibliotecas usadas foram:
 
 4- jsonwebtoken:
     Para criar o JWT que terá o token de autenticação e as infos do usuário.
+
+-------------------------------------------------------------------------------------
+Para chamar as rotas tem que fornecer o header 'Authorization' com seguinte valor:
+'Bearer jwt'
+
+onde jwt é o token fornecido pela rota '/auth/login'
