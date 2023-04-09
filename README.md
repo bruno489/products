@@ -1,11 +1,13 @@
 Para rodar localmente se deve:
 
-1- Rodar o comando 'yarn install' na pasta raiz para que baixe todas as dependencias.
+1- No terminal, rode o comando 'yarn install' na pasta raiz para que baixe todas as dependencias.
 
 2- Criar o arquivo '.env' na pasta raiz onde deverá conter:
     MONGO_URL='URLmongo' //string
     PORT=número da porta //int de 4 dígitos
     JWT_TOKEN='token' //string de 30 digitos aleatórios para servir de token
+
+3- No terminal, rode o comando 'yarn dev'
 
 -------------------------------------------------------------------------------------
 
