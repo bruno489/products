@@ -37,7 +37,7 @@ class ProductsController{
             }
             
 
-            const newProduct = await MdlProduct.findOneAndUpdate(
+            const newProduct = await MdlProduct.findByIdAndUpdate(
                 { _id: id}, 
                 {
                     name, 
@@ -45,6 +45,7 @@ class ProductsController{
                     qty, 
                     price
                 },
+                {new:true}
             )
 
             return res.status(200).send(newProduct)
