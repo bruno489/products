@@ -29,14 +29,22 @@ class ProductsController{
             const {name,categories,qty,price} = req.body
 
             const productCategories:Category[] = []
-            for(const cat of categories){
-                const category = await MdlCategory.findOne({_id: cat})
-                if(category) productCategories.push(category)
+            if(categories){
+                for(const cat of categories){
+                    const category = await MdlCategory.findOne({_id: cat})
+                    if(category) productCategories.push(category)
+                }
             }
+            
 
             const newProduct = await MdlProduct.findOneAndUpdate(
                 { _id: id}, 
-                {name, categories:productCategories, qty, price},
+                {
+                    name, 
+                    categories: categories ? productCategories : undefined, 
+                    qty, 
+                    price
+                },
             )
 
             return res.status(200).send(newProduct)

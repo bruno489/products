@@ -7,7 +7,7 @@ const router = Router()
 router.get('/product', authMiddleware, productControllers.getAllProducts)
 router.get('/product/:id', authMiddleware, productControllers.getProductById)
 
-router.put('/product/:id', authMiddleware, productControllers.editProductById)
+router.patch('/product/:id', authMiddleware, productControllers.editProductById)
 
 router.post('/product', authMiddleware, productControllers.createProduct)
 
